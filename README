@@ -1,0 +1,21 @@
+Majdan Packed Array library
+===========================
+General and static packed array manipulation library.
+Works on 32 and 64 bit processors.
+
+To compile:
+make
+
+To run tests:
+./bin/mpa-test
+./bin/mpa-static-test
+
+To clean:
+make clean
+
+How to use the library?
+See the examples directory which contains usage examples of the library!
+
+Written by Andras Majdan
+License: GNU General Public License Version 3
+Report bugs to <majdan.andras@gmail.com>

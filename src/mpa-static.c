@@ -47,13 +47,13 @@
  */
 packed_array *pa_create(uint_fast32_t log_count)
 {
-	packed_array *pa = malloc( sizeof(packed_array) );
+	packed_array *pa = (packed_array*) malloc( sizeof(packed_array) );
 	pa->log_count = log_count;
 
 	pa->phy_bitsize = PHY_BITSIZE;
 	pa->phy_count = log_count * LOG_BITSIZE / PHY_BITSIZE + 1;
 
-	pa->phy_mem = calloc( pa->phy_count, sizeof(uint_fast32_t) );
+	pa->phy_mem = (uint_fast32_t*) calloc( pa->phy_count, sizeof(uint_fast32_t) );
 	return pa;
 }
 

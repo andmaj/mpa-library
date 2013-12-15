@@ -40,7 +40,7 @@ int main()
 | 1 | 3 |
 | 2 | 15 |
 
- ## Usage
+## Usage
 
 ### Creating a packed array
 
@@ -185,6 +185,27 @@ Change 4 to the desired bit length!
 3. In your source folder:
 ```
 gcc -I mpa-library/src yourprogram.c mpa-library/bin/mpa-static.o
+```
+
+### Using the static library .a file
+
+#### General version
+
+1. Copy **mpa-library** folder in your program's source directory
+2. Run **make general-lib** in the **mpa-library** folder
+3. In your source folder:
+```
+gcc -I mpa-library/src -L mpa-library/bin -lmpa yourprogram.c
+```
+
+#### Static version
+
+1. Copy **mpa-library** folder in your program's source directory
+2. Run **make static-lib CFLAGS='-DLOG_BITSIZE=4** in the **mpa-library** folder.
+Change 4 to the desired bit length!
+3. In your source folder:
+```
+gcc -I mpa-library/src -L mpa-library/bin -lmpa-static yourprogram.c
 ```
 
 ## Author

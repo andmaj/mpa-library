@@ -134,6 +134,32 @@ void main()
 }
 ```
 
+#### Compiling with it
+
+1. Copy **mpa-library** folder in your program's source directory
+2. In your source folder:
+```
+gcc -I mpa-library/src yourprogram.c mpa-library/src/mpa.c
+```
+
+#### Using the compiled .o file
+
+1. Copy **mpa-library** folder in your program's source directory
+2. Run **make general-obj** in the **mpa-library** folder
+3. In your source folder:
+```
+gcc -I mpa-library/src yourprogram.c mpa-library/bin/mpa.o
+```
+
+#### Using the static library .a file
+
+1. Copy **mpa-library** folder in your program's source directory
+2. Run **make general-lib** in the **mpa-library** folder
+3. In your source folder:
+```
+gcc -I mpa-library/src -L mpa-library/bin -lmpa yourprogram.c
+```
+
 ### Static version
 
 Content of **yourprogram.c**:
@@ -146,17 +172,7 @@ void main()
 }
 ```
 
-### Compiling with it
-
-#### General version
-
-1. Copy **mpa-library** folder in your program's source directory
-2. In your source folder:
-```
-gcc -I mpa-library/src yourprogram.c mpa-library/src/mpa.c
-```
-
-#### Static version
+#### Compiling with it
 
 1. Copy **mpa-library** folder in your program's source directory
 2. In your source folder:
@@ -166,18 +182,7 @@ gcc -DLOG_BITS=4 -I mpa-library/src yourprogram.c mpa-library/src/mpa-static.c
 
 Change 4 to the desired bit length!
 
-### Using the compiled .o file
-
-#### General version
-
-1. Copy **mpa-library** folder in your program's source directory
-2. Run **make general-obj** in the **mpa-library** folder
-3. In your source folder:
-```
-gcc -I mpa-library/src yourprogram.c mpa-library/bin/mpa.o
-```
-
-#### Static version
+#### Using the compiled .o file
 
 1. Copy **mpa-library** folder in your program's source directory
 2. Run **make static-obj CFLAGS='-DLOG_BITSIZE=4** in the **mpa-library** folder.
@@ -187,18 +192,7 @@ Change 4 to the desired bit length!
 gcc -I mpa-library/src yourprogram.c mpa-library/bin/mpa-static.o
 ```
 
-### Using the static library .a file
-
-#### General version
-
-1. Copy **mpa-library** folder in your program's source directory
-2. Run **make general-lib** in the **mpa-library** folder
-3. In your source folder:
-```
-gcc -I mpa-library/src -L mpa-library/bin -lmpa yourprogram.c
-```
-
-#### Static version
+#### Using the static library .a file
 
 1. Copy **mpa-library** folder in your program's source directory
 2. Run **make static-lib CFLAGS='-DLOG_BITSIZE=4** in the **mpa-library** folder.

@@ -223,4 +223,4 @@ Report bugs to <majdan.andras@gmail.com>
 
 ## See also
 
-[gpakosz/PackedArray](https://github.com/andmaj/bitmapdd) - Another great packed array implementation written by Gregory Pakosz
+[gpakosz/PackedArray](https://github.com/gpakosz/PackedArray/) - Another great packed array implementation written by Gregory Pakosz

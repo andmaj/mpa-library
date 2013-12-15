@@ -13,12 +13,12 @@ For example a **4 bit general packed array with capacity for 3 elements**:
 int main()
 {
   packed_array *pa = pa_create(4,3);
-  pa_set(0,12)
-  pa_set(1,3)
-  pa_set(2,15)
+  pa_set(pa, 0, 12)
+  pa_set(pa, 1, 3)
+  pa_set(pa, 2, 15)
   int i;
   for(i=0; i<3; i++)
-    printf("%d ", (int)pa_get(i));
+    printf("%d ", (int)pa_get(pa, i));
   pa_delete(pa);
 }
 ```

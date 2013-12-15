@@ -5,40 +5,51 @@
 *There are two versions: general and static.
 With general version you can create packed arrays with any bit length. With static version you have to compile in the bit length which will be fixed during runtime. *
 
-For example a **4 bit general packed array with capacity for 3 elements**:
+For example a **4 bit general packed array with capacity for 11 elements**:
 ```
 #include <stdio.h>
 #include "mpa.h"
 
-int main()
+void main()
 {
-  packed_array *pa = pa_create(4,3);
-  pa_set(pa, 0, 12)
-  pa_set(pa, 1, 3)
-  pa_set(pa, 2, 15)
   int i;
-  for(i=0; i<3; i++)
+  packed_array *pa = pa_create(4, 11);
+  
+  for(i=0; i<11; i++)
+	 pa_set(pa, i, i);
+ 
+  for(i=0; i<11; i++)
     printf("%d ", (int)pa_get(pa, i));
+    
   pa_delete(pa);
 }
 ```
 
 **Result:**
-12 3 15
+0 1 2 3 4 5 6 7 8 9 10
 
 **How it looks like in memory (32 bit CPU)?**
 
 | Physical array index | uint32_t (MSB to LSB) |
 |:----------------------------:|:-------------------------:|
-| 0 | 1100 0011 1111 0000 0000 0000 0000 0000 |
+| 0 | 0000 0001 0010 0011 0100 0101 0110 0111 |
+| 1 | 1000 1001 1010 0000 0000 0000 0000 0000 |
 
 **How it looks like for you (via the library)?**
 
 | Logical array index | Value |
 |:------------------------:|:----------:|
-| 0 | 12 |
-| 1 | 3 |
-| 2 | 15 |
+| 0 | 0 |
+| 1 | 1 |
+| 2 | 2 |
+| 3 | 3 |
+| 4 | 4 |
+| 5 | 5 |
+| 6 | 6 |
+| 7 | 7 |
+| 8 | 8 |
+| 9 | 9 |
+| 10 | 10 |
 
 ## Usage
 

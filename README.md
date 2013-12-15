@@ -78,6 +78,7 @@ INDEX - Logical index of the element
 VALUE - Value to set
 
 **The VALUE have to be in range otherwise it may overwrite the neighbors!**
+
 For the 4 bit packed array example: you can store an element with 2^4 - 1 = 15  maximum value, so the range is 0 to 15.
 
 ### Deleting a packed array
@@ -179,8 +180,7 @@ gcc -I mpa-library/src yourprogram.c mpa-library/bin/mpa.o
 #### Static version
 
 1. Copy **mpa-library** folder in your program's source directory
-2. Run **make static-obj CFLAGS='-DLOG_BITSIZE=4** in the **mpa-library** folder
-
+2. Run **make static-obj CFLAGS='-DLOG_BITSIZE=4** in the **mpa-library** folder.
 Change 4 to the desired bit length!
 3. In your source folder:
 ```

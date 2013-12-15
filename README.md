@@ -162,6 +162,7 @@ gcc -I mpa-library/src yourprogram.c mpa-library/src/mpa.c
 ```
 gcc -DLOG_BITS=4 -I mpa-library/src yourprogram.c mpa-library/src/mpa-static.c
 ```
+
 Change 4 to the desired bit length!
 
 ### Using the compiled .o file
@@ -179,6 +180,7 @@ gcc -I mpa-library/src yourprogram.c mpa-library/bin/mpa.o
 
 1. Copy **mpa-library** folder in your program's source directory
 2. Run **make static-obj CFLAGS='-DLOG_BITSIZE=4** in the **mpa-library** folder
+
 Change 4 to the desired bit length!
 3. In your source folder:
 ```

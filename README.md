@@ -157,7 +157,7 @@ gcc -I mpa-library/src yourprogram.c mpa-library/bin/mpa.o
 2. Run **make general-lib** in the **mpa-library** folder
 3. In your source folder:
 ```
-gcc -I mpa-library/src -L mpa-library/bin -lmpa yourprogram.c
+gcc -I mpa-library/src -Lmpa-library/bin -lmpa yourprogram.c
 ```
 
 ### Static version
@@ -199,7 +199,7 @@ gcc -I mpa-library/src yourprogram.c mpa-library/bin/mpa-static.o
 Change 4 to the desired bit length!
 3. In your source folder:
 ```
-gcc -I mpa-library/src -L mpa-library/bin -lmpa-static yourprogram.c
+gcc -I mpa-library/src -Lmpa-library/bin -lmpa-static yourprogram.c
 ```
 
 ## Author
